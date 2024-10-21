@@ -1,0 +1,205 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Bodoni Moda', serif;
+}
+
+header {
+    background-color: #e60000;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+ul li a:hover {
+    color: #ff6666;
+    border-bottom: 2px solid #ff6666;
+}
+
+/* Sección Configuración */
+.configuracion {
+    text-align: center;
+    padding: 50px;
+}
+
+.configuracion h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ff0000;
+}
+
+/* Estilos para formularios */
+form {
+    background-color: #222;
+    /* Fondo del formulario */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Espaciado interno */
+    margin: 20px auto;
+    /* Centrado y espaciado */
+    width: 80%;
+    /* Ancho del formulario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para profundidad */
+}
+
+form label {
+    display: block;
+    /* Hacer que las etiquetas sean bloques */
+    margin-bottom: 5px;
+    /* Espaciado debajo de la etiqueta */
+    font-weight: 700;
+    /* Negrita para las etiquetas */
+}
+
+form input,
+form select {
+    width: 100%;
+    /* Ancho completo */
+    padding: 10px;
+    /* Espaciado interno */
+    margin-bottom: 15px;
+    /* Espaciado inferior */
+    border: 1px solid #444;
+    /* Borde sutil */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    background-color: #333;
+    /* Fondo de campos de entrada */
+    color: #fff;
+    /* Color del texto */
+}
+
+form input:focus,
+form select:focus {
+    border-color: #e60000;
+    /* Color del borde al enfocar */
+}
+
+/* Botones */
+button {
+    background-color: #e60000;
+    /* Fondo rojo */
+    color: #fff;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    padding: 10px 15px;
+    /* Espaciado interno */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    font-size: 1rem;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease;
+    /* Transición suave */
+}
+
+button:hover {
+    background-color: #ff6666;
+    /* Fondo más claro al pasar el mouse */
+}
+
+/* Mensajes de estado */
+.message {
+    margin-top: 10px;
+    font-weight: 600;
+    /* Negrita para los mensajes */
+}
+
+.message.success {
+    color: #66ff66;
+    /* Verde para mensajes de éxito */
+}
+
+.message.error {
+    color: #ff6666;
+    /* Rojo para mensajes de error */
+}
+
+/* Lista de configuración */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 20px 0;
+}
+
+ul li a {
+    color: #e60000;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+ul li a:hover {
+    color: #ff6666;
+    border-bottom: 2px solid #ff6666;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #fff;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Ventas y Reportes de Actividades</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Moto1.png" alt="Logo Motos DELUXE" class="logo">
+            <h1>Análisis de Ventas y Reportes de Actividades</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="ventas_diarias.html">Ventas Diarias</a></li>
+            <li><a href="generar_reportes.html">Generar Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dashboard">
+            <h2>Resumen de Ventas</h2>
+            <div class="resumen">
+                <div class="ventas">
+                    <h3>Ventas del Día</h3>
+                    <p>$0 MXN</p> <!-- Este valor se actualizará dinámicamente -->
+                </div>
+                <div class="grafica">
+                    <h3>Gráfico de Ventas</h3>
+                    <img src="grafica.jpg" alt="Gráfico de Ventas" class="grafico">
+                </div>
+            </div>
+
+            <div class="resumen">
+                <div class="productos-mas-vendidos">
+                    <h3>Productos Más Vendidos</h3>
+                    <ul>
+                        <li>Motocicleta Deluxe X1 - 20 unidades</li>
+                        <li>Motocicleta Deluxe Sport - 15 unidades</li>
+                        <li>Motocicleta Deluxe Cruiser - 12 unidades</li>
+                    </ul>
+                </div>
+                <div class="actualizaciones">
+                    <h3>Actualizaciones Recientes</h3>
+                    <ul>
+                        <li>Nuevo producto añadido: Motocicleta Deluxe Pro</li>
+                        <li>Stock actualizado para Motocicleta Cruiser</li>
+                        <li>Oferta especial de la semana: 10% de descuento en Deluxe X1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mejores-vendedores">
+                <h3>Mejores Vendedores del año</h3>
+                <ul>
+                    <li>Eliud Vilchis Hernandez - 30 ventas</li>
+                    <li>Rufino Vidal Barrera - 25 ventas</li>
+                    <li>Josef Cruz Lázaro - 20 ventas</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Motos DELUXE - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para actualizar el total del día -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ventasDelDiaElement = document.querySelector('.ventas p');
+
+            // Cargar total del día desde localStorage si existe
+            let totalDia = parseFloat(localStorage.getItem('totalDia')) || 0;
+            ventasDelDiaElement.textContent = `$${totalDia.toLocaleString('en-US')} MXN`;
+
+            // Aquí podrías agregar lógica para mostrar productos más vendidos
+            const productosMasVendidos = []; // Lógica para obtener productos más vendidos
+
+            // Simulación de carga de productos más vendidos
+            const productosList = document.querySelector('.productos-mas-vendidos ul');
+            productosMasVendidos.forEach(producto => {
+                const li = document.createElement('li');
+                li.textContent = producto; // Aquí deberías mostrar el nombre y las unidades vendidas
+                productosList.appendChild(li);
+            });
+        });
+        const userRole = localStorage.getItem('userRole');
+
+        if (userRole !== 'analista') {
+            alert('No tienes permiso para acceder a esta página.');
+            window.location.href = 'index.html'; // Redirigir a la página de inicio de sesión
+        }
+    </script>
+</body>
+
+</html>

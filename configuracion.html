@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración del Sistema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="configuracion.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Moto1.png" alt="Logo Motos DELUXE" class="logo">
+            <h1>Análisis de Ventas y Reportes de Actividades</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="ventas_diarias.html">Ventas Diarias</a></li>
+            <li><a href="generar_reportes.html">Generar Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </nav>
+
+    <section class="configuracion">
+        <h2>Opciones de Configuración</h2>
+
+        <!-- Cambiar Contraseña -->
+        <div class="opcion">
+            <h3>Cambiar Contraseña</h3>
+            <form id="changePasswordForm">
+                <label for="oldPassword">Contraseña Actual:</label>
+                <input type="password" id="oldPassword" required>
+
+                <label for="newPassword">Nueva Contraseña:</label>
+                <input type="password" id="newPassword" required>
+
+                <label for="confirmPassword">Confirmar Nueva Contraseña:</label>
+                <input type="password" id="confirmPassword" required>
+
+                <button type="submit">Cambiar Contraseña</button>
+            </form>
+            <div id="passwordMessage" class="message"></div>
+        </div>
+
+        <!-- Configurar Notificaciones -->
+        <div class="opcion">
+            <h3>Configurar Notificaciones</h3>
+            <form id="notificationForm">
+                <label for="emailNotifications">Recibir notificaciones por email:</label>
+                <select id="emailNotifications">
+                    <option value="yes">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="smsNotifications">Recibir notificaciones por SMS:</label>
+                <select id="smsNotifications">
+                    <option value="yes">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <button type="submit">Guardar Configuración</button>
+            </form>
+            <div id="notificationMessage" class="message"></div>
+        </div>
+
+        <!-- Permisos -->
+        <div class="opcion">
+            <h3>Administrar Permisos</h3>
+            <form id="permissionsForm">
+                <label for="userRole">Seleccionar Usuario:</label>
+                <select id="userRole" required>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="analista">Analista</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+
+                <label for="permissions">Asignar Permisos:</label>
+                <select id="permissions" required>
+                    <option value="read">Lectura</option>
+                    <option value="write">Escritura</option>
+                    <option value="admin">Administrador</option>
+                </select>
+
+                <button type="submit">Guardar Permisos</button>
+            </form>
+            <div id="permissionsMessage" class="message"></div>
+        </div>
+
+        <!-- Ajustes de Idioma -->
+        <div class="opcion">
+            <h3>Ajustes de Idioma</h3>
+            <form id="languageForm">
+                <label for="language">Seleccionar Idioma:</label>
+                <select id="language" required>
+                    <option value="es">Español</option>
+                    <option value="en">Inglés</option>
+                </select>
+
+                <button type="submit">Cambiar Idioma</button>
+            </form>
+            <div id="languageMessage" class="message"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Motos DELUXE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Verificar rol de usuario
+        const userRole = localStorage.getItem('userRole');
+
+        if (userRole !== 'administrador') {
+            alert('No tienes permiso para acceder a esta página.');
+            window.location.href = 'index.html'; // Redirigir a la página de inicio de sesión
+        }
+
+        // Cambiar Contraseña
+        document.getElementById('changePasswordForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const oldPassword = document.getElementById('oldPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Validar contraseñas
+            if (newPassword === confirmPassword) {
+                // Aquí podrías agregar lógica para actualizar la contraseña en el servidor
+                document.getElementById('passwordMessage').textContent = 'Contraseña cambiada con éxito.';
+                document.getElementById('changePasswordForm').reset();
+            } else {
+                document.getElementById('passwordMessage').textContent = 'Las contraseñas no coinciden.';
+            }
+        });
+
+        // Configurar Notificaciones
+        document.getElementById('notificationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const emailNotifications = document.getElementById('emailNotifications').value;
+            const smsNotifications = document.getElementById('smsNotifications').value;
+
+            // Aquí podrías agregar lógica para guardar la configuración de notificaciones
+            document.getElementById('notificationMessage').textContent = 'Configuración de notificaciones guardada.';
+            document.getElementById('notificationForm').reset();
+        });
+
+        // Administrar Permisos
+        document.getElementById('permissionsForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const userRole = document.getElementById('userRole').value;
+            const permissions = document.getElementById('permissions').value;
+
+            // Aquí podrías agregar lógica para guardar los permisos
+            document.getElementById('permissionsMessage').textContent = 'Permisos asignados con éxito.';
+            document.getElementById('permissionsForm').reset();
+        });
+
+        // Ajustes de Idioma
+        document.getElementById('languageForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const language = document.getElementById('language').value;
+
+            // Aquí podrías agregar lógica para guardar el idioma seleccionado
+            document.getElementById('languageMessage').textContent = 'Idioma cambiado a ' + (language === 'es' ? 'Español' : 'Inglés') + '.';
+            document.getElementById('languageForm').reset();
+        });
+    </script>
+</body>
+
+</html>

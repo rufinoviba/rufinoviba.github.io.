@@ -1,0 +1,181 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Bodoni Moda', serif;
+}
+
+header {
+    background-color: #e60000;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+ul li a:hover {
+    color: #ff6666;
+    border-bottom: 2px solid #ff6666;
+}
+
+main {
+    padding: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.resumen {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.ventas {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centramos verticalmente */
+    align-items: center;
+    /* Centramos horizontalmente */
+    text-align: center;
+    transition: color 0.3s ease;
+    /* Transición suave para el color */
+}
+
+.ventas h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.ventas p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Efecto hover para iluminar el texto en verde */
+.ventas:hover h3,
+.ventas:hover p {
+    color: #00ff00;
+}
+
+.grafica,
+.productos-mas-vendidos,
+.actualizaciones {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+}
+
+.grafica h3,
+.productos-mas-vendidos h3,
+.actualizaciones h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.grafico {
+    width: 100%;
+    height: auto;
+}
+
+.productos-mas-vendidos ul,
+.actualizaciones ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.productos-mas-vendidos li,
+.actualizaciones li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+.mejores-vendedores {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    /* Espaciado adicional */
+}
+
+.mejores-vendedores h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.mejores-vendedores ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mejores-vendedores li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
